@@ -5,6 +5,33 @@
 	<meta charset="utf-8" />
 </head>
 <body>
+    <?php 
+        $server = "tcp:js4crp8h8t.database.windows.net,1433";
+        $user = "Username@user";
+        $pass = "7K0p*2Dc5";
+        $database = "base";
+        
+        try
+        {
+            $conn = new PDO("sqlsrv:server=$server ; Database = $database", $user, $pass);
+        }
+        catch(Exception $e)
+        {
+            die(print_r($e));
+        }
+        
+        $sql = "SELECT * FROM Student";
+        $stmt3 = sqlsrv_query($conn, $sql);
+
+        if(sqlsrv_has_rows($stmt3))
+        {
+            while($row = sqlsrv_fetch_array($stmt3))
+            {
+                echo '<p>'.$row['nameStudent'].'</p>';
+            }
+        } 
+    ?>
+    
     <h1>This is new site!</h1>
 </body>
 </html>
