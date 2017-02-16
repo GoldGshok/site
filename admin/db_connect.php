@@ -8,19 +8,23 @@ class DB_CONNECT
     // import database connection variables
     require_once 'config.php';
     
-    $connection = mysqli_connect($host, $user, $pass, $dbname);
+    $mysqli = mysqli_connect($host, $user, $pass, $dbname);
     
-    if ($mysqli->connect_errno) 
+    if ($mysqli->connect_errno)  
     {
-      printf("Не удалось подключиться: %s\n", $connection->connect_error);
+      echo "Ошибка: " . $mysqli->connect_error . "\n";
+      exit;
     }
-    echo 'Здесь еще не упало'; 
+ 
   }
 
   function getQuery($query) 
   {
-    $result = mysqli_query($query) or die(mysqli_error($connection));
-    echo 'Может быть тут что-то пошло не так?';
+    if (!$result = $mysqli->query($query)) 
+    {
+      echo "Ошибка: " . $mysqli->error . "\n";
+      exit;
+    }
     return $result;
   }
 

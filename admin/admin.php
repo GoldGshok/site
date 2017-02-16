@@ -8,25 +8,22 @@
   require_once 'console.php';
   require_once 'db_connect.php';
 
-  try 
-  {
-    $db = new DB_CONNECT();
-    $db->connect();
 
-    // выполняем операции с базой данных
-    $query = 'SELECT ID, Name FROM price_type';
-    $result = $db->getQuery($query);
-  }
-  catch (Exception $e)
+  $db = new DB_CONNECT();
+  $db->connect();
+
+  // выполняем операции с базой данных
+  $sql = 'SELECT ID, Name FROM price_type';
+  $result = $db->getQuery($sql);
+  
+  if ($result->num_rows === 0) 
   {
-    console_log( 'Исключение: ', $e->getMessage(),"\n" );
+    echo "Извините, данные не найдены.";
+    exit;
   }  
-
-  echo 'Тут работает';
-  console_log($result->num_rows);
  
   print "<table>\n";
-  while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+  while ($row = $result->fetch_assoc()) 
   {
     printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
