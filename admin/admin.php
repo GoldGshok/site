@@ -12,7 +12,7 @@
     or die("Ошибка " . mysqli_error($link));
  
   // выполняем операции с базой данных
-  $query ="SELECT ID, Name FROM price_type";
+  $query ="SELECT pt.ID, pt.Name FROM acsm_d4a0065602d66b1.price_type pt";
   $result = mysqli_query($query); 
   printf("Select вернул %d строк.\n", $result->num_rows);
  
