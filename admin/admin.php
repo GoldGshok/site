@@ -16,7 +16,7 @@
 
   $result = $db->getResult($sql);
   
-  if ($result->num_rows === 0) 
+  if ($result->num_rows == 0) 
   {
     echo "Извините, данные не найдены.";
     exit;
