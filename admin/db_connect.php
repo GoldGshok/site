@@ -1,7 +1,7 @@
 <?php
 
 
-class Connect 
+class DB_CONNECT 
 {
   function connect() 
   {

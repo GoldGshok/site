@@ -8,7 +8,7 @@
   require_once 'console.php';
   require_once 'db_connect.php';
 
-  $db = new Connect();
+  $db = new DB_CONNECT();
   $db->connect();
 
   // выполняем операции с базой данных
