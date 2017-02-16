@@ -15,13 +15,16 @@
   $query = "SELECT ID, Name FROM price_type";
   $result = $db->query($query);  
 
-  console_log('Row count' + $result->num_rows);
+  echo ('Тут работает');
+  console_log($result->num_rows);
  
   print "<table>\n";
   while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
     printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
-  print "</table>\n"; 
+  print "</table>\n";
+  
+  echo ('А тут работает?'); 
 
 ?>
 </body>
