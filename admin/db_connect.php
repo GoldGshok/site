@@ -7,12 +7,12 @@ class DB_CONNECT
   {
     // import database connection variables
     require_once 'config.php';
+    
     $connection = mysqli_connect($host, $user, $pass, $dbname);
     
     if ($mysqli->connect_errno) 
     {
       printf("Не удалось подключиться: %s\n", $connection->connect_error);
-      exit();
     }
     echo 'Здесь еще не упало'; 
   }
@@ -26,7 +26,6 @@ class DB_CONNECT
 
   function close() 
   {
-    // closing db connection
     mysqli_close();
   }
 }

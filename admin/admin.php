@@ -19,7 +19,7 @@
   }
   catch (Exception $e)
   {
-    echo 'Исключение: ', $e->getMessage(),"\n";
+    console_log( 'Исключение: ', $e->getMessage(),"\n" );
   }  
 
   echo 'Тут работает';
