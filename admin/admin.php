@@ -15,7 +15,7 @@
   $query = "SELECT ID, Name FROM price_type";
   $result = $db->query($query);  
 
-  console_log($result->num_rows);
+  console_log('Row count' + $result->num_rows);
  
   print "<table>\n";
   while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
