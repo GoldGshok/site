@@ -1,6 +1,4 @@
 <?php
-
-
 class DB_CONNECT 
 {
   public function connect() 
@@ -29,7 +27,7 @@ class DB_CONNECT
 
   public function close() 
   {
-    mysqli_close();
+    $mysqli->close();
   }
 }
 ?>
