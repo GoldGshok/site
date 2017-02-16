@@ -1,12 +1,12 @@
 <?php
 
 
-class DB_CONNECT 
+class Connect 
 {
   function connect() 
   {
     // import database connection variables
-    require_once 'connection.php';
+    require_once 'config.php';
     $connection = mysql_connect($host, $user, $pass) or die(mysql_error());
 
     // Selecing database
