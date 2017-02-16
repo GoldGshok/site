@@ -12,13 +12,15 @@ class Connect
     if ($mysqli->connect_errno) 
     {
       printf("Не удалось подключиться: %s\n", $connection->connect_error);
-    exit();
+      exit();
     }
+    echo 'Здесь еще не упало'; 
   }
 
   function getQuery($query) 
   {
-    return mysqli_query($query) or die(mysqli_error($connection));
+    $result = mysqli_query($query) or die(mysqli_error($connection));
+    return $result;
   }
 
   function close() 
