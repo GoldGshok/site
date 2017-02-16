@@ -20,6 +20,7 @@ class DB_CONNECT
   function getQuery($query) 
   {
     $result = mysqli_query($query) or die(mysqli_error($connection));
+    echo 'Может быть тут что-то пошло не так?';
     return $result;
   }
 
