@@ -14,7 +14,8 @@
  
   // выполняем операции с базой данных
   $query = "SELECT pt.ID, pt.Name FROM price_type pt";
-  $result = mysqli_query($query); 
+  $result = mysqli_query($query) 
+    or die(mysqli_error()); 
   console_log($result->num_rows);
  
   print "<table>\n";
