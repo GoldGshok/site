@@ -12,8 +12,15 @@
   $db->connect();
 
   // выполняем операции с базой данных
-  $query = "SELECT ID, Name FROM price_type";
-  $result = $db->getQuery($query);  
+  $query = 'SELECT ID, Name FROM price_type';
+  try 
+  {
+    $result = $db->getQuery($query);
+  }
+  catch (Exception $e)
+  {
+    echo 'Исключение: ', $e->getMessage(),"\n";
+  }  
 
   echo 'Тут работает';
   console_log($result->num_rows);
