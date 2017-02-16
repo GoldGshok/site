@@ -15,7 +15,7 @@ class Connect
 }
   }
 
-  function query($query) {
+  function getQuery($query) {
     return mysqli_query($query) or die(mysql_error());
   }
 
