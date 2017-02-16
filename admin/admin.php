@@ -6,15 +6,16 @@
 
 <?php
   require_once 'connection.php';
+  require_once 'console.php';
 
   // подключаемся к серверу
   $link = mysqli_connect($host, $user, $pass, $dbname) 
     or die("Ошибка " . mysqli_error($link));
  
   // выполняем операции с базой данных
-  $query ="SELECT pt.ID, pt.Name FROM acsm_d4a0065602d66b1.price_type pt";
+  $query = "SELECT pt.ID, pt.Name FROM price_type pt";
   $result = mysqli_query($query); 
-  printf("Select вернул %d строк.\n", $result->num_rows);
+  console_log($result->num_rows);
  
   print "<table>\n";
   while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
