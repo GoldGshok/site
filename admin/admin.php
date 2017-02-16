@@ -13,15 +13,16 @@
  
   // выполняем операции с базой данных
   $query ="SELECT ID, Name FROM price_type";
-  $result = mysqli_query($link, $query) 
-    or die("Ошибка " . mysqli_error($link)); 
-
+  $result = mysqli_query($query); 
+  printf("Select вернул %d строк.\n", $result->num_rows);
+ 
   print "<table>\n";
   while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
     printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
   print "</table>\n"; 
    
+  $result->close();
   // закрываем подключение
   mysqli_close($link);
 ?>
