@@ -13,6 +13,16 @@ class DB_CONNECT
       echo "Ошибка: " . $mysqli->connect_error . "\n";
       exit;
     }
+    
+    if (!$mysqli->set_charset($charset)) 
+    {
+      printf("Ошибка при загрузке набора символов $charset: %s\n", $mysqli->error);
+      exit;
+    } 
+    else 
+    {
+      printf("Текущий набор символов: %s\n", $mysqli->character_set_name());
+    }
   }
 
   public function getResult($query)
