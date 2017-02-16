@@ -6,13 +6,13 @@
 
 <?php
   require_once 'console.php';
-  requere_once 'db_connect.php';
+  require_once 'db_connect.php';
 
   $db = new Connect();
   $db->connect();
  
   // выполняем операции с базой данных
-  $query = "SELECT pt.ID, pt.Name FROM price_type pt";
+  $query = "SELECT ID, Name FROM price_type";
   $result = $db->query($query);  
 
   console_log($result->num_rows);
