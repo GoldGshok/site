@@ -8,13 +8,13 @@
   require_once 'console.php';
   require_once 'db_connect.php';
 
-  $db = new DB_CONNECT();
-  $db->connect();
-
-  // выполняем операции с базой данных
-  $query = 'SELECT ID, Name FROM price_type';
   try 
   {
+    $db = new DB_CONNECT();
+    $db->connect();
+
+    // выполняем операции с базой данных
+    $query = 'SELECT ID, Name FROM price_type';
     $result = $db->getQuery($query);
   }
   catch (Exception $e)
