@@ -3,7 +3,7 @@
 
 class DB_CONNECT 
 {
-  private function connect() 
+  public function connect() 
   {
     // import database connection variables
     require_once 'config.php';
@@ -17,7 +17,7 @@ class DB_CONNECT
     }
   }
 
-  private function getResult($query)
+  public function getResult($query)
   {
     if (!$result = $mysqli->query($query))
     {
@@ -27,7 +27,7 @@ class DB_CONNECT
     return $result;
   }
 
-  private function close() 
+  public function close() 
   {
     mysqli_close();
   }
