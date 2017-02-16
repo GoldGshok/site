@@ -17,13 +17,8 @@
     or die("Ошибка " . mysqli_error($link)); 
 
   print "<table>\n";
-  while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) 
-  {
-    print "\t<tr>\n";
-    foreach ($line as $col_value) {
-      print "\t\t<td>$col_value</td>\n";
-    }
-    print "\t</tr>\n";
+  while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
   print "</table>\n"; 
    
