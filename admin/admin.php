@@ -10,12 +10,12 @@
 
   $db = new Connect();
   $db->connect();
- 
+
   // выполняем операции с базой данных
   $query = "SELECT ID, Name FROM price_type";
   $result = $db->query($query);  
 
-  echo ('Тут работает');
+  echo 'Тут работает';
   console_log($result->num_rows);
  
   print "<table>\n";
@@ -23,8 +23,8 @@
     printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
   print "</table>\n";
-  
-  echo ('А тут работает?'); 
+
+  echo 'А тут работает?'; 
 
 ?>
 </body>

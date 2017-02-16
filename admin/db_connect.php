@@ -12,12 +12,11 @@ class Connect
     // Selecing database
     mysql_select_db($dbname, $connection) or die(mysql_error());
   }
-  
+
   function query($query) {
-    $result = mysql_query($query) or die(mysql_error());
-    return $result;        
-  } 
-  
+    return mysql_query($query) or die(mysql_error());
+  }
+
   function close() {
     // closing db connection
     mysql_close();
