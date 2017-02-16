@@ -3,24 +3,23 @@
 
 class DB_CONNECT 
 {
-  function connect() 
+  private function connect() 
   {
     // import database connection variables
     require_once 'config.php';
-    
-    $mysqli = mysqli_connect($host, $user, $pass, $dbname);
-    
+
+    $mysqli = new mysqli($host, $user, $pass, $dbname);
+
     if ($mysqli->connect_errno)  
     {
       echo "Ошибка: " . $mysqli->connect_error . "\n";
       exit;
     }
- 
   }
 
-  function getQuery($query) 
+  private function getResult($query)
   {
-    if (!$result = $mysqli->query($query)) 
+    if (!$result = $mysqli->query($query))
     {
       echo "Ошибка: " . $mysqli->error . "\n";
       exit;
@@ -28,7 +27,7 @@ class DB_CONNECT
     return $result;
   }
 
-  function close() 
+  private function close() 
   {
     mysqli_close();
   }
