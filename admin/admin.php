@@ -13,6 +13,7 @@
 
   // выполняем операции с базой данных
   $sql = 'SELECT ID, Name FROM price_type';
+  echo $sql;
   $result = $db->getResult($sql);
   
   if ($result->num_rows === 0) 
