@@ -1,6 +1,8 @@
 <?php
 class DB_CONNECT 
 {
+  private $mysql;
+  
   public function connect() 
   {
     // import database connection variables
@@ -25,9 +27,9 @@ class DB_CONNECT
     }
   }
 
-  public function getResult($query)
+  public function getResult($sql)
   {
-    if (!$result = $mysqli->query($query))
+    if (!$result = $mysqli->query($sql))
     {
       echo "Ошибка: " . $mysqli->error . "\n";
       exit;
