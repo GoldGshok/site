@@ -8,7 +8,7 @@
   require_once 'connection.php';
 
   // подключаемся к серверу
-  $link = mysqli_connect($host, $user, $password, $database) 
+  $link = mysqli_connect($host, $user, $pass, $dbname) 
     or die("Ошибка " . mysqli_error($link));
  
   // выполняем операции с базой данных
