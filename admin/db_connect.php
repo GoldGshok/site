@@ -1,7 +1,7 @@
 <?php
 class DB_CONNECT 
 {
-  private $mysqli;
+  public $mysqli;
   
   public function connect() 
   {
