@@ -19,7 +19,8 @@
   console_log($result->num_rows);
  
   print "<table>\n";
-  while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+  while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+  {
     printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
   print "</table>\n";

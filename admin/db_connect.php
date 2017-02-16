@@ -7,21 +7,24 @@ class Connect
   {
     // import database connection variables
     require_once 'config.php';
-    $connection = mysqli_connect($host, $user, $pass, $dbname) or die(mysql_error());
+    $connection = mysqli_connect($host, $user, $pass, $dbname);
     
-    if ($mysqli->connect_errno) {
+    if ($mysqli->connect_errno) 
+    {
       printf("Не удалось подключиться: %s\n", $connection->connect_error);
     exit();
-}
+    }
   }
 
-  function getQuery($query) {
-    return mysqli_query($query) or die(mysql_error());
+  function getQuery($query) 
+  {
+    return mysqli_query($query) or die(mysqli_error($connection));
   }
 
-  function close() {
+  function close() 
+  {
     // closing db connection
-    mysql_close();
+    mysqli_close();
   }
 }
 ?>
