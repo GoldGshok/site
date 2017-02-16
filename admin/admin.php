@@ -30,7 +30,6 @@
   print "</table>\n";
 
   $result->close();
-  echo 'А тут работает?'; 
 
 ?>
 </body>

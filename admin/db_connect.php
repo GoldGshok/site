@@ -7,7 +7,8 @@ class DB_CONNECT
   {
     // import database connection variables
     require_once 'config.php';
-
+    try
+    {
     $this->$mysqli = new mysqli($host, $user, $pass, $dbname);
 
     if ($this->$mysqli->connect_errno)  
@@ -24,6 +25,11 @@ class DB_CONNECT
     else 
     {
       printf("Текущий набор символов: %s\n", $this->$mysqli->character_set_name());
+    }
+    }
+    catch (Exception $e)
+    {
+      echo 'Ошибка ', $e->getMessage() , "\n";
     }
   }
 
