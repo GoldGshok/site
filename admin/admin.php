@@ -32,7 +32,7 @@
     exit;
   }  
  
-  print '<table>\n';
+  print '<table>';
   print '<tr>
       <th>ID</th>
       <th>Тип цены</th>
@@ -41,7 +41,7 @@
   {
     printf("<tr><td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
-  print '</table>\n';
+  print '</table>';
 
   $result->close();
 
