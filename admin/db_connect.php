@@ -23,10 +23,6 @@ class DB_CONNECT
       printf("Ошибка при загрузке набора символов : %s\n", $this->mysqli->error);
       exit;
     } 
-    else 
-    {
-      printf("Текущий набор символов: %s\n", $this->mysqli->character_set_name());
-    }
   }
 
   public function getResult($sql)
