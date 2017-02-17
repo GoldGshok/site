@@ -18,27 +18,27 @@
     
     public function getHost()
     {
-      return $this->$host;
+      return $this->host;
     }
     
     public function getUser()
     {
-      return $this->$user;
+      return $this->user;
     }
     
     public function getPass()
     {
-      return $this->$pass;
+      return $this->pass;
     }
     
     public function getDbName()
     {
-      return $this->$dbname;  
+      return $this->dbname;  
     }
     
     public function getCharset()
     {
-      return $this->$charset;  
+      return $this->charset;  
     }
   }
 ?>
