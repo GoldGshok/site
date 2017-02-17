@@ -9,11 +9,12 @@
     
     function __construct()
     {
-      $host = 'eu-cdbr-azure-north-e.cloudapp.net';
-      $user = 'bf020a4db22631';
-      $pass = '2acecacf';
-      $dbname = 'acsm_d4a0065602d66b1';
-      $charset = 'cp1251';
+      $this->host = 'eu-cdbr-azure-north-e.cloudapp.net';
+      $this->user = 'bf020a4db22631';
+      $this->pass = '2acecacf';
+      $this->dbname = 'acsm_d4a0065602d66b1';
+      $this->port = '3306';
+      $this->charset = 'cp1251';
     }
     
     public function getHost()
