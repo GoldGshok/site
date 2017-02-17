@@ -32,16 +32,16 @@
     exit;
   }  
  
-  print "<table>\n";
+  print '<table>\n';
   print '<tr>
       <th colspan="2">ID</th>
       <th>Тип цены</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
-    printf("<tr><td>%s</td><td>%s</td></tr>", $row["ID"], $row["Name"]);
+    printf("<tr><td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Name"]);
   }
-  print "</table>\n";
+  print '</table>\n';
 
   $result->close();
 
