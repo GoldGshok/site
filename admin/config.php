@@ -9,27 +9,27 @@
     
     public getHost()
     {
-      return $host;
+      return $this->$host;
     }
     
     public getUser()
     {
-      return $user;
+      return $this->$user;
     }
     
     public getPass()
     {
-      return $pass;
+      return $this->$pass;
     }
     
     public getDbName()
     {
-      return $dbname;  
+      return $this->$dbname;  
     }
     
     public getCharset()
     {
-      return $charset;  
+      return $this->$charset;  
     }
   }
 ?>
