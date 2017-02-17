@@ -15,6 +15,7 @@ class DB_CONNECT
     if ($this->mysqli->connect_errno) 
     {
 			printf("Ошибка подключения к серверу: %s\n", $this->mysqli->connect_error);
+			exit;
 		}
     
     if (!$this->mysqli->set_charset($config->getCharset())) 
