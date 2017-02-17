@@ -10,11 +10,11 @@ class DB_CONNECT
 
     $this->$mysqli = new mysqli($host, $user, $pass, $dbname);
 
-    if ($this->$mysqli->connect_errno)  
+    if (mysqli_connect_error()) 
     {
-      echo "Ошибка: " . $this->$mysqli->connect_error . "\n";
-      exit;
-    }
+			trigger_error("Failed to conencto to MySQL: " . mysql_connect_error(),
+				 E_USER_ERROR);
+		}
     
     if (!$this->$mysqli->set_charset($charset)) 
     {
