@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Тестируем PHP</title>
-    <link href="..styles/styles.css" rel="stylesheet">
+    <link href="../styles/styles.css" rel="stylesheet">
   </head>
 <body>
 
