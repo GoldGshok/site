@@ -6,7 +6,7 @@ class DB_CONNECT
   public function connect() 
   {
     // import database connection variables
-    require_once 'config.php';
+    require_once ('config.php');
 
     $config = new Config();
     

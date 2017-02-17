@@ -1,11 +1,20 @@
 <?php
   class Config
   {
-    protected $host = 'eu-cdbr-azure-north-e.cloudapp.net';
-    protected $user = 'bf020a4db22631';
-    protected $pass = '2acecacf';
-    protected $dbname = 'acsm_d4a0065602d66b1';
-    protected $charset = 'cp1251';
+    protected $host;
+    protected $user;
+    protected $pass;
+    protected $dbname;
+    protected $charset;
+    
+    function __construct()
+    {
+      $host = 'eu-cdbr-azure-north-e.cloudapp.net';
+      $user = 'bf020a4db22631';
+      $pass = '2acecacf';
+      $dbname = 'acsm_d4a0065602d66b1';
+      $charset = 'cp1251';
+    }
     
     public getHost()
     {
