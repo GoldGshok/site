@@ -42,7 +42,7 @@
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
-    printf("<tr><td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Item"], $row["Name"], $row["Cost"], $row["Date"]);
+    printf("<tr><td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Item"], $row["Name"], $row["Cost"], $row["Date"]);
   }
   print '</table>';
 
