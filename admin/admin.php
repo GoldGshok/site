@@ -1,13 +1,23 @@
 <html>
   <head>
     <title>Тестируем PHP</title>
+    <link href="..styles/styles.css" rel="stylesheet">
   </head>
 <body>
+
+  <div class="shapka">
+    <?php
+      require_once ('top.php'); 
+    ?>
+  </div>
 
 <?php
   require_once ('console.php');
   require_once ('db_connect.php');
 
+
+  
+  
   $db = new DB_CONNECT();
   $db->connect();
 
