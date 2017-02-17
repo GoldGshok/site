@@ -16,27 +16,27 @@
       $charset = 'cp1251';
     }
     
-    public getHost()
+    public function getHost()
     {
       return $this->$host;
     }
     
-    public getUser()
+    public function getUser()
     {
       return $this->$user;
     }
     
-    public getPass()
+    public function getPass()
     {
       return $this->$pass;
     }
     
-    public getDbName()
+    public function getDbName()
     {
       return $this->$dbname;  
     }
     
-    public getCharset()
+    public function getCharset()
     {
       return $this->$charset;  
     }
