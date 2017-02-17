@@ -34,7 +34,7 @@
  
   print '<table>\n';
   print '<tr>
-      <th colspan="2">ID</th>
+      <th>ID</th>
       <th>Тип цены</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
