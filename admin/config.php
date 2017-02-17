@@ -1,4 +1,7 @@
 <?php
+  //set output php errors
+  ini_set( "display_errors", true );
+  
   class Config
   {
     protected $host;
