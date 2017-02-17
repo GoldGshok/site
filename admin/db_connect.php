@@ -8,7 +8,9 @@ class DB_CONNECT
     // import database connection variables
     require_once 'config.php';
 
-    $this->$mysqli = new mysqli($host, $user, $pass, $dbname);
+    $config = new Config();
+    
+    $this->$mysqli = new mysqli($config->getHost(), $config->getUser(), $config->getPass(), $config->getDbName());
 
     if (mysqli_connect_error()) 
     {
@@ -16,7 +18,7 @@ class DB_CONNECT
 				 E_USER_ERROR);
 		}
     
-    if (!$this->$mysqli->set_charset($charset)) 
+    if (!$this->$mysqli->set_charset($config->getCharset())) 
     {
       printf("Ошибка при загрузке набора символов $charset: %s\n", $this->$mysqli->error);
       exit;
