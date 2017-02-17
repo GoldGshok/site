@@ -14,7 +14,7 @@
       $this->pass = '2acecacf';
       $this->dbname = 'acsm_d4a0065602d66b1';
       $this->port = '3306';
-      $this->charset = 'cp1251';
+      $this->charset = 'utf8';
     }
     
     public function getHost()
