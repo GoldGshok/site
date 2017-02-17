@@ -10,30 +10,29 @@ class DB_CONNECT
 
     $config = new Config();
     
-    $this->$mysqli = new mysqli($config->getHost(), $config->getUser(), $config->getPass(), $config->getDbName());
+    $this->mysqli = new mysqli($config->getHost(), $config->getUser(), $config->getPass(), $config->getDbName());
 
-    if (mysqli_connect_error()) 
+    if ($this->mysqli->connect_errno) 
     {
-			trigger_error("Failed to conencto to MySQL: " . mysql_connect_error(),
-				 E_USER_ERROR);
+			printf("Ошибка подключения к серверу: %s\n", $this->mysqli->connect_error);
 		}
     
-    if (!$this->$mysqli->set_charset($config->getCharset())) 
+    if (!$this->mysqli->set_charset($config->getCharset())) 
     {
-      printf("Ошибка при загрузке набора символов $charset: %s\n", $this->$mysqli->error);
+      printf("Ошибка при загрузке набора символов : %s\n", $this->mysqli->error);
       exit;
     } 
     else 
     {
-      printf("Текущий набор символов: %s\n", $this->$mysqli->character_set_name());
+      printf("Текущий набор символов: %s\n", $this->mysqli->character_set_name());
     }
   }
 
   public function getResult($sql)
   {
-    if (!$result = $this->$mysqli->query($sql))
+    if (!$result = $this->mysqli->query($sql))
     {
-      echo "Ошибка: " . $this->$mysqli->error . "\n";
+      echo "Ошибка: " . $this->mysqli->error . "\n";
       exit;
     }
     return $result;
@@ -41,7 +40,7 @@ class DB_CONNECT
 
   public function close() 
   {
-    $this->$mysqli->close();
+    $this->mysqli->close();
   }
 }
 ?>
