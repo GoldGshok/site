@@ -60,5 +60,11 @@ input {
 }
 
 .form {
-  margin: 0 auto;
+  width: 50px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -75px;
 } 
