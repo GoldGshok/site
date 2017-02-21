@@ -5,6 +5,8 @@
   </head>
 <body>
 
+<h1>Вход в админку</h1>
+
 <form action="authorize.php" method="post">
   <fieldset class="account-info">
     <label>
