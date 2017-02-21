@@ -6,8 +6,8 @@
   
   require_once ('db_connect.php');
   
-  if (preg_match("/^$SERVER_ROOT/",$_SERVER['HTTP_REFERER']))
-  {
+  //if (preg_match("/^$SERVER_ROOT/",$_SERVER['HTTP_REFERER']))
+  //{
     // данные были отправлены формой?
     if ($_POST['Submit'])
     {
@@ -37,5 +37,5 @@
       }
    
     }
-  }
+ // }
 ?>
