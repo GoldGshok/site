@@ -49,6 +49,7 @@ input {
   color: #fff;
   cursor: pointer;
   font-weight: bold;
+  float: left;
   padding: 8px 16px;
 }
 .account-action label {

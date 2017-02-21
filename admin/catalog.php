@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Заказы</title>
+    <title>Каталог</title>
     <link href="../styles/styles.css" rel="stylesheet">
   </head>
 <body>
@@ -76,7 +76,7 @@
       <td>%s</td> 
       <td>%s</td>
       <td>%s</td>
-      <td><img src='%s' width='300' height='300'/></td>
+      <td><img src='%s' width='200' height='200'/></td>
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
