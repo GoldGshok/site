@@ -23,7 +23,6 @@
   </div>
 
 <?php
-  require_once ('console.php');
   require_once ('db_connect.php');
 
   $db = new DB_CONNECT();
@@ -67,8 +66,8 @@
       <th>Размер</th>
       <th>Тип</th>
       <th>Сложность</th>
-      <th>Стоимость продажи (руб.)</th>
       <th>Стоимость покупки (руб.)</th>
+      <th>Стоимость продажи (руб.)</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
@@ -92,8 +91,8 @@
       $row["Size"], 
       $row["Type"], 
       $row["Complexity"],
-      $row["Sell_Cost"],
-      $row["Buy_Cost"]);
+      $row["Buy_Cost"],
+      $row["Sell_Cost"]);
   }
   print '</table>';
 

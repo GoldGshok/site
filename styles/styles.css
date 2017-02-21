@@ -1,3 +1,7 @@
+body {
+  background-color: #469584;
+}
+
 nav {
   display: block;
   position: relative;
@@ -81,9 +85,4 @@ border-right: 2px solid #56433D;
 }
 td:nth-child(2){
 text-align: left;
-}
-
-body
-{
-    background-color: #469584; /* Цвет фона веб-страницы */
 }
