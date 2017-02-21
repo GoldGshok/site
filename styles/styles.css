@@ -72,7 +72,8 @@ font-size: 14px;
 text-align: center;
 border-top: 2px solid #56433D;
 border-bottom: 2px solid #56433D;
-border-right: 2px solid #56433D;
+border-right: 2px solid #56433D
+border-left: 2px solid #56433D;
 }
 td:first-child {
 border-left: 2px solid #56433D;
