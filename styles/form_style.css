@@ -9,8 +9,6 @@ form {
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
   width: 240px;
-  top: calc(50% - 600/2);
-  left: calc(50% - 300/2);
 }
 fieldset {
   border: 0;
@@ -59,4 +57,8 @@ input {
   font-size: 12px;
   float: left;
   margin: 10px 0 0 20px;
+}
+
+.form {
+  margin: 0 auto;
 } 

@@ -5,8 +5,9 @@
   </head>
 <body>
 
-<h1>Вход в админку</h1>
+<h3>Вход в админку</h3>
 
+<div class="form">
 <form action="authorize.php" method="post">
   <fieldset class="account-info">
     <label>
@@ -22,6 +23,7 @@
     <input class="btn" type="submit" name="Submit" value="Войти">
   </fieldset>
 </form>
+</div>
 
 </body>
 </html>

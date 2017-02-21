@@ -1,9 +1,7 @@
 <?php
   // открываем сессию
   session_start();
-  
-  $SERVER_ROOT = "http://paintingbynumbers.azurewebsites.net/admin/";
-  
+    
   require_once ('db_connect.php');
     
   // данные были отправлены формой?
