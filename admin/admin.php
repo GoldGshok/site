@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Админка</title>
+    <title>Вход в админку</title>
     <link href="../styles/styles.css" rel="stylesheet">
   </head>
 <body>

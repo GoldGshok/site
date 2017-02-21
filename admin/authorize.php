@@ -16,12 +16,14 @@
     
       $user = $_POST['user_name'];
       $password = md5($_POST['user_pass']);
+      
+      printf("USER: $user, PASS: $password");
     
       $sql = "
         SELECT 1 
         FROM users u 
-        WHERE u.Login = '$user' 
-          AND u.Password = '$password'";
+        WHERE u.login = '$user' 
+          AND u.password = '$password'";
     
       $result = $db->getResult($sql);
        
