@@ -44,7 +44,8 @@ a {
   font-size: 2em;
   font-weight: bold;
   transition: 0.5s ease-in-out;
-  font-family: 'Montez', cursive; /*скачать шрифт можно с сайта https://www.google.com/fonts/*/
+  font-family: 'Montez', cursive;
+  src: url(fonts/Montez-Regular.ttf);
 }
 
 a:hover {
@@ -52,37 +53,37 @@ a:hover {
 }
 
 table {
-border-spacing: 0 10px;
-font-family: 'Open Sans', sans-serif;
-font-weight: bold;
+  border-spacing: 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 th {
-padding: 10px 20px;
-background: #56433D;
-color: #F9C941;
-border-right: 2px solid; 
-font-size: 0.9em;
+  padding: 10px 20px;
+  background: #56433D;
+  color: #F9C941;
+  border-right: 2px solid; 
+  font-size: 0.9em;
 }
 th:first-child {
-text-align: left;
+  text-align: left;
 }
 th:last-child {
-border-right: none;
+  border-right: none;
 }
 td {
-vertical-align: middle;
-padding: 10px;
-font-size: 14px;
-text-align: center;
-border-top: 2px solid #56433D;
-border-bottom: 2px solid #56433D;
-border-right: 2px solid #56433D
-border-left: 2px solid #56433D;
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  border-top: 2px solid #56433D;
+  border-bottom: 2px solid #56433D;
+  border-right: 2px solid #56433D
+  border-left: 2px solid #56433D;
 }
 td:first-child {
-border-left: 2px solid #56433D;
-border-right: 2px solid #56433D;
+  border-left: 2px solid #56433D;
+  border-right: 2px solid #56433D;
 }
 td:nth-child(2){
-text-align: left;
+  text-align: left;
 }
