@@ -65,14 +65,24 @@
       <td>%s</td> 
       <td>%s</td>
       <td>%s</td>
+      <td><img src='%s' width='300' height='300'/></td>
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
-      <td>%s</td>
-      </tr>", $row["ID"], $row["Item"], $row["Name"], $row["Cost"], $row["Date"]);
+      </tr>", 
+      $row["ID"], 
+      $row["Article"], 
+      $row["Item"], 
+      $row["Site"], 
+      $row["Author"], 
+      $row["Size"], 
+      $row["Type"], 
+      $row["complexity"],
+      $row["Sell_Cost"],
+      $row["Buy_Cost"]);
   }
   print '</table>';
 
