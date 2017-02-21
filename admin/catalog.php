@@ -60,7 +60,7 @@
   print '<table>';
   print '<tr>
       <th>ID</th>
-      <th>Артикль</th>
+      <th>Артикул</th>
       <th>Наименование</th>
       <th>Изображение</th>
       <th>Автор</th>
