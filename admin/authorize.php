@@ -8,36 +8,33 @@
   
   printf ("%s",$_SERVER['HTTP_REFERER']);
   
-  if (preg_match("/^$SERVER_ROOT/", $_SERVER['HTTP_REFERER']))
+  // данные были отправлены формой?
+  if ($_POST['Submit'])
   {
-    // данные были отправлены формой?
-    if ($_POST['Submit'])
-    {
-      $db = new DB_CONNECT();
-      $db->connect();
+    $db = new DB_CONNECT();
+    $db->connect();
     
-      $user = $_POST['user_name'];
-      $password = md5($_POST['user_pass']);
+    $user = $_POST['user_name'];
+    $password = md5($_POST['user_pass']);
       
-      printf("USER: $user, PASS: $password");
+    printf("USER: $user, PASS: $password");
     
-      $sql = "
-        SELECT 1 
-        FROM users u 
-        WHERE u.login = '$user' 
-          AND u.password = '$password'";
+    $sql = "
+      SELECT 1 
+      FROM users u 
+      WHERE u.login = '$user' 
+        AND u.password = '$password'";
     
-      $result = $db->getResult($sql);
+    $result = $db->getResult($sql);
        
-      if ($result->num_rows > 0)
-      {
-        // запоминаем имя пользователя
-        $_SESSION['logged_user'] = $_POST['user_name'];
-        // перенаправляем
-        header("Location: orders.php");
-        exit;
-      }
-   
+    if ($result->num_rows > 0)
+    {
+      // запоминаем имя пользователя
+      $_SESSION['logged_user'] = $_POST['user_name'];
+      // перенаправляем
+      header("Location: orders.php");
+      exit;
     }
   }
+
 ?>
