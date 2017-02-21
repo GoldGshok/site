@@ -22,13 +22,13 @@
   $sql = '
     select 
 	    it.ID, 
-      it.vendor_code AS Article, 
+      it.Vendor_code AS Article, 
       it.Name AS Item, 
-      it.Site ,
+      it.Site,
       a.Name AS Author,
       its.Name AS Size,
       itt.Name AS Type,
-      it.complexity,
+      it.Complexity,
       ps.Cost AS Sell_Cost, 
 	    pb.Cost AS Buy_Cost
     from items it
@@ -56,8 +56,8 @@
       <th>Размер</th>
       <th>Тип</th>
       <th>Сложность</th>
-      <th>Стоимость продажи</th>
-      <th>Стоимость покупки</th>
+      <th>Стоимость продажи (руб.)</th>
+      <th>Стоимость покупки (руб.)</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
@@ -80,7 +80,7 @@
       $row["Author"], 
       $row["Size"], 
       $row["Type"], 
-      $row["complexity"],
+      $row["Complexity"],
       $row["Sell_Cost"],
       $row["Buy_Cost"]);
   }
