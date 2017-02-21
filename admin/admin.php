@@ -13,7 +13,7 @@
       <input type="text" name="user_name">
     </label>
     <label>
-      Пароль: 
+      Пароль 
       <input type="password" name="user_pass">
     </label>
   </fieldset>
