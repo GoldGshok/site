@@ -7,6 +7,17 @@
 
   <div class="head">
     <?php
+      //очищаем адресную строку
+      unset($_SESSION['logged_user']);
+      //открываем сессию
+      session_start();
+      
+      if (!isset($_SESSION['logged_user']))
+      {
+        header("Location: admin.php");
+        exit;
+      }
+      
       require_once ('top.php'); 
     ?>
   </div>

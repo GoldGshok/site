@@ -5,43 +5,51 @@
   </head>
 <body>
 
-  <div class="head">
-    <?php
-      require_once ('top.php'); 
-    ?>
-  </div>
+<form action="authorize.php" method="post">
+     Логин: <input type="text" name="user_name"><br>
+     Пароль: <input type="password" name="user_pass"><br>
+     <input type="submit" name="Submit">
+</form>
 
 <?php
-  require_once ('console.php');
-  require_once ('db_connect.php');
-
-  $db = new DB_CONNECT();
-  $db->connect();
-
-  // выполняем операции с базой данных
-  $sql = 'SELECT ID, Name FROM price_type';
-
-  $result = $db->getResult($sql);
+  // открываем сессию
+  session_start();
   
-  if ($result->num_rows == 0) 
+  $SERVER_ROOT = "http://paintingbynumbers.azurewebsites.net/admin/";
+  
+  require_once ('db_connect.php');
+  
+  if (preg_match("/^$SERVER_ROOT/",$_SERVER['HTTP_REFERER']))
   {
-    echo "Извините, данные не найдены.";
-    exit;
-  }  
- 
-  print '<table>';
-  print '<tr>
-      <th>ID</th>
-      <th>Тип цены</th>
-    </tr>';
-  while ($row = $result->fetch_assoc()) 
-  {
-    printf("<tr><td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Name"]);
+    // данные были отправлены формой?
+    if ($_POST['Submit'])
+    {
+      $db = new DB_CONNECT();
+      $db->connect();
+    
+      $user = $_POST['user_name'];
+      $password = md5($_POST['user_pass']);
+    
+      $sql = "
+        SELECT 1 
+        FROM users u 
+        WHERE u.Login = '$user' 
+          AND u.Password = '$password'";
+    
+      $result = $db->getResult($sql);
+       
+      if ($result->num_rows > 0)
+      {
+        // запоминаем имя пользователя
+        $_SESSION['logged_user'] = $_POST['user_name'];
+        // перенаправляем
+        header("Location: orders.php");
+        exit;
+      }
+   
+    }
   }
-  print '</table>';
-
-  $result->close();
-
 ?>
+
 </body>
 </html>
