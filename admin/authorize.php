@@ -5,9 +5,7 @@
   $SERVER_ROOT = "http://paintingbynumbers.azurewebsites.net/admin/";
   
   require_once ('db_connect.php');
-  
-  printf ("%s",$_SERVER['HTTP_REFERER']);
-  
+    
   // данные были отправлены формой?
   if ($_POST['Submit'])
   {
@@ -16,8 +14,6 @@
     
     $user = $_POST['user_name'];
     $password = md5($_POST['user_pass']);
-      
-    printf("USER: $user, PASS: $password");
     
     $sql = "
       SELECT 1 
