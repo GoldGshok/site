@@ -29,7 +29,7 @@
   $db->connect();
 
   // выполняем операции с базой данных
-  $sql = '';
+  $sql = 'SELECT cl.ID, cl.Name, cl.Site, cl.Phone FROM clients cl';
 
   $result = $db->getResult($sql);
   
@@ -42,40 +42,22 @@
   print '<table>';
   print '<tr>
       <th>ID</th>
-      <th>Артикул</th>
-      <th>Наименование</th>
-      <th>Изображение</th>
-      <th>Автор</th>
-      <th>Размер</th>
-      <th>Тип</th>
-      <th>Сложность</th>
-      <th>Стоимость покупки (руб.)</th>
-      <th>Стоимость продажи (руб.)</th>
+      <th>Клиент</th>
+      <th>Страница в соц. сетях</th>
+      <th>Телефон</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
-    printf("<tr>
+    foreach ($row as $key => $value)
+    {
+      printf("<tr><td>$value</td></tr>");
+      /*printf("<tr>
       <td>%s</td> 
-      <td>%s</td>
-      <td>%s</td>
-      <td><img src='%s' width='200' height='200'/></td>
-      <td>%s</td>
-      <td>%s</td>
-      <td>%s</td>
-      <td>%s</td>
-      <td>%s</td>
       <td>%s</td>
       </tr>", 
       $row["ID"], 
-      $row["Article"], 
-      $row["Item"], 
-      $row["Site"], 
-      $row["Author"], 
-      $row["Size"], 
-      $row["Type"], 
-      $row["Complexity"],
-      $row["Buy_Cost"],
-      $row["Sell_Cost"]);
+      $row["Name"]);*/
+    }
   }
   print '</table>';
 
