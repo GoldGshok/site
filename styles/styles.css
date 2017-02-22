@@ -45,7 +45,7 @@ a {
   font-weight: bold;
   transition: 0.5s ease-in-out;
   font-family: 'Montez', cursive;
-  src: url(fonts/Montez-Regular.ttf);
+  src: url(../fonts/Montez-Regular.ttf);
 }
 
 a:hover {
@@ -68,7 +68,7 @@ th:first-child {
   text-align: left;
 }
 th:last-child {
-  border-right: 2px solid;
+  border-right: none;
 }
 td {
   vertical-align: middle;
