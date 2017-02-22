@@ -29,6 +29,12 @@
       header("Location: orders.php");
       exit;
     }
+    else
+    {
+      header("Location: admin.php");
+      echo 'Вы ввели неверный логин/пароль';
+      exit;  
+    }
   }
 
 ?>
