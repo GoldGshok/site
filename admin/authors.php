@@ -2,6 +2,7 @@
   <head>
     <title>Авторы</title>
     <link href="../styles/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="../scripts/jquery-latest.js"></script>
     <script type="text/javascript" src="../scripts/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../scripts/jquery.tablesorter.js">
@@ -25,6 +26,12 @@
       require_once ('top.php'); 
     ?>
   </div>
+  
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#viewtable").tablesorter();
+  });
+</script>
 
 <?php
   require_once ('db_connect.php');
@@ -43,8 +50,9 @@
     exit;
   }  
  
-  print '<table id="viewtable" class="tablesorter">';
-  print '<thead><tr>
+  print '<table id="viewtable">';
+  print '<thead>
+    <tr>
       <th>ID</th>
       <th>Автор</th>
     </tr>
@@ -65,12 +73,6 @@
   $result->close();
 
 ?>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("#viewtable").tablesorter();
-  });
-</script>
 
 </body>
 </html>
