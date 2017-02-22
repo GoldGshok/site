@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montez|Pangolin');
+
 body {
   background-color: #E1E3DD;
 }
@@ -45,7 +47,6 @@ a {
   font-weight: bold;
   transition: 0.5s ease-in-out;
   font-family: 'Montez', cursive;
-  src: url(../fonts/Montez-Regular.ttf);
 }
 
 a:hover {
