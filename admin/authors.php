@@ -2,7 +2,8 @@
   <head>
     <title>Авторы</title>
     <link href="../styles/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="../scripts/jquery-latest.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../scripts/jquery.tablesorter.js">
 </script>
   </head>
