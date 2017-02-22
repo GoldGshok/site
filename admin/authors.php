@@ -42,7 +42,7 @@
   print '<table>';
   print '<tr>
       <th>ID</th>
-      <th>F</th>
+      <th>Автор</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
