@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montez|Pangolin');
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
 
 body {
   background-color: #E1E3DD;
@@ -46,7 +46,7 @@ a {
   font-size: 1.5em;
   font-weight: bold;
   transition: 0.5s ease-in-out;
-  font-family: 'Montez', cursive;
+  font-family: 'Pangolin', cursive;
 }
 
 a:hover {
