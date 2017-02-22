@@ -29,7 +29,7 @@
   $db->connect();
 
   // выполняем операции с базой данных
-  $sql = 'SELECT a.ID, a.Name FROM author a';
+  $sql = 'SELECT cl.ID, cl.Name, cl.Site, cl.Phone FROM clients cl';
 
   $result = $db->getResult($sql);
   
@@ -42,20 +42,18 @@
   print '<table>';
   print '<tr>
       <th>ID</th>
-      <th>Автор</th>
+      <th>Клиент</th>
+      <th>Страница в соц. сетях</th>
+      <th>Телефон</th>
     </tr>';
   while ($row = $result->fetch_assoc()) 
   {
+    printf("<tr>");
     foreach ($row as $key => $value)
     {
-      printf("<tr><td>$value</td></tr>");
-      /*printf("<tr>
-      <td>%s</td> 
-      <td>%s</td>
-      </tr>", 
-      $row["ID"], 
-      $row["Name"]);*/
+      printf("<td>$value</td>");
     }
+    printf("</tr>");
   }
   print '</table>';
 
