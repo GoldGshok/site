@@ -2,6 +2,9 @@
   <head>
     <title>Авторы</title>
     <link href="../styles/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="../sctipts/jquery-latest.js"></script>
+    <script type="text/javascript" src="../sctipts/jquery.tablesorter.js">
+</script>
   </head>
 <body>
 
@@ -39,11 +42,13 @@
     exit;
   }  
  
-  print '<table>';
-  print '<tr>
+  print '<table id="viewtable" class="tablesorter">';
+  print '<thead><tr>
       <th>ID</th>
       <th>Автор</th>
-    </tr>';
+    </tr>
+    </thead>
+    <tbody>';
   while ($row = $result->fetch_assoc()) 
   {
     printf("<tr>");
@@ -53,10 +58,18 @@
     }
     printf("</tr>");
   }
-  print '</table>';
+  print '</tbody>
+    </table>';
 
   $result->close();
 
 ?>
+
+</script>
+  $(document).ready(function(){
+    $("#viewtable").tablesorter();
+  });
+</script>
+
 </body>
 </html>
