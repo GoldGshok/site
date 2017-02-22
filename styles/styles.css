@@ -68,7 +68,7 @@ th:first-child {
   text-align: left;
 }
 th:last-child {
-  border-right: none;
+  border-right: 2px solid;
 }
 td {
   vertical-align: middle;
