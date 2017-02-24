@@ -32,7 +32,6 @@
     else
     {
       header("Location: index.php");
-      echo 'Вы ввели неверный логин/пароль';
       exit;  
     }
   }
