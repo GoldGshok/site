@@ -14,7 +14,7 @@
       
       if (!isset($_SESSION['logged_user']))
       {
-        header("Location: admin.php");
+        header("Location: index.php");
         exit;
       }
       

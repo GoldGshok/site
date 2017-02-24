@@ -1,6 +1,6 @@
 <?php
   //set output php errors
-  ini_set( "display_errors", true );
+  //ini_set( "display_errors", true );
   
   class Config
   {
@@ -20,27 +20,27 @@
       $this->charset = 'utf8';
     }
     
-    public function getHost()
+    private function getHost()
     {
       return $this->host;
     }
     
-    public function getUser()
+    private function getUser()
     {
       return $this->user;
     }
     
-    public function getPass()
+    private function getPass()
     {
       return $this->pass;
     }
     
-    public function getDbName()
+    private function getDbName()
     {
       return $this->dbname;  
     }
     
-    public function getCharset()
+    private function getCharset()
     {
       return $this->charset;  
     }
