@@ -20,27 +20,27 @@
       $this->charset = 'utf8';
     }
     
-    private function getHost()
+    public function getHost()
     {
       return $this->host;
     }
     
-    private function getUser()
+    public function getUser()
     {
       return $this->user;
     }
     
-    private function getPass()
+    public function getPass()
     {
       return $this->pass;
     }
     
-    private function getDbName()
+    public function getDbName()
     {
       return $this->dbname;  
     }
     
-    private function getCharset()
+    public function getCharset()
     {
       return $this->charset;  
     }
