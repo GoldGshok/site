@@ -11,8 +11,7 @@
     <script type="text/javascript">
       $(document).ready(function() { 
         $("table") 
-        .tablesorter({widthFixed: true, widgets: ['zebra']}) 
-        .tablesorterPager({container: $("#pager")}); 
+        .tablesorter({widthFixed: true, widgets: ['zebra']}); 
       });
     </script>
     
