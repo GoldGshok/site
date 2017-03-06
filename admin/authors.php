@@ -5,6 +5,13 @@
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js">
     </script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#viewtable").tablesorter();
+      });
+    </script>
+    
   </head>
 <body>
 
@@ -24,12 +31,6 @@
       require_once ('top.php'); 
     ?>
   </div>
-  
-<script type="text/javascript">
-  $(document).ready(function(){
-    $("#viewtable").tablesorter();
-  });
-</script>
 
 <?php
   require_once ('db_connect.php');
