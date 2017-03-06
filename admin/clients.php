@@ -2,6 +2,18 @@
   <head>
     <title>Клиенты</title>
     <link href="../styles/styles.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../styles/bluetable/style.css">
+    <script type="text/javascript" src="../scripts/jquery-latest.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.metadata.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.tablesorter.pager.js"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function() { 
+        $("table") 
+        .tablesorter({widthFixed: true, widgets: ['zebra']}); 
+      });
+    </script>
   </head>
 <body>
 
@@ -39,7 +51,7 @@
     exit;
   }  
  
-  print '<table>';
+  print '<table cellspacing="1" id="viewtable" class="tablesorter">';
   print '<tr>
       <th>ID</th>
       <th>Клиент</th>
