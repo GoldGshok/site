@@ -48,7 +48,7 @@
     exit;
   }  
  
-  print '<table id="viewtable">';
+  print '<table id="viewtable" class="tablesorter">';
   print '<thead>
     <tr>
       <th>ID</th>
