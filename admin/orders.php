@@ -56,18 +56,22 @@
   }  
  
   print '<table cellspacing="1" id="viewtable" class="tablesorter">';
-  print '<tr>
+  print '
+    <thead>
+    <tr>
       <th>ID</th>
       <th>Название картины</th>
       <th>Имя клиента</th>
       <th>Стоимость продажи</th>
       <th>Дата создания</th>
-    </tr>';
+    </tr>
+    </thead>
+    <tbody>';
   while ($row = $result->fetch_assoc()) 
   {
     printf("<tr><td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Item"], $row["Name"], $row["Cost"], $row["Date"]);
   }
-  print '</table>';
+  print '</tbody></table>';
 
   $result->close();
 

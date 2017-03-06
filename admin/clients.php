@@ -52,12 +52,16 @@
   }  
  
   print '<table cellspacing="1" id="viewtable" class="tablesorter">';
-  print '<tr>
-      <th>ID</th>
-      <th>Клиент</th>
-      <th>Страница в соц. сетях</th>
-      <th>Телефон</th>
-    </tr>';
+  print '
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Клиент</th>
+        <th>Страница в соц. сетях</th>
+        <th>Телефон</th>
+      </tr>
+    </thead>
+    <tbody>';
   while ($row = $result->fetch_assoc()) 
   {
     printf("<tr>");
@@ -67,7 +71,7 @@
     }
     printf("</tr>");
   }
-  print '</table>';
+  print '</tbody></table>';
 
   $result->close();
 

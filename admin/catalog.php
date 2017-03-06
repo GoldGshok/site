@@ -70,18 +70,22 @@
   }  
  
   print '<table cellspacing="1" id="viewtable" class="tablesorter">';
-  print '<tr>
-      <th>ID</th>
-      <th>Артикул</th>
-      <th>Наименование</th>
-      <th>Изображение</th>
-      <th>Автор</th>
-      <th>Размер</th>
-      <th>Тип</th>
-      <th>Сложность</th>
-      <th>Стоимость покупки (руб.)</th>
-      <th>Стоимость продажи (руб.)</th>
-    </tr>';
+  print '
+      <thead>    
+       <tr>
+        <th>ID</th>
+        <th>Артикул</th>
+        <th>Наименование</th>
+        <th>Изображение</th>
+        <th>Автор</th>
+        <th>Размер</th>
+        <th>Тип</th>
+        <th>Сложность</th>
+        <th>Стоимость покупки (руб.)</th>
+        <th>Стоимость продажи (руб.)</th>
+       </tr>
+      </thead>
+      <tbody>';
   while ($row = $result->fetch_assoc()) 
   {
     printf("<tr>
@@ -107,7 +111,7 @@
       $row["Buy_Cost"],
       $row["Sell_Cost"]);
   }
-  print '</table>';
+  print '</tbody></table>';
 
   $result->close();
 
