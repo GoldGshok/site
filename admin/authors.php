@@ -2,13 +2,17 @@
   <head>
     <title>Авторы</title>
     <link href="../styles/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js">
-    </script>
+    <link type="text/css" rel="stylesheet" href="../styles/bluetable/style.css">
+    <script type="text/javascript" src="../scripts/jquery-latest.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.metadata.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="../scripts/jquery.tablesorter.pager.js"></script>
     
     <script type="text/javascript">
-      $(document).ready(function(){
-        $("#viewtable").tablesorter();
+      $(document).ready(function() { 
+        $("table") 
+        .tablesorter({widthFixed: true, widgets: ['zebra']}) 
+        .tablesorterPager({container: $("#pager")}); 
       });
     </script>
     
@@ -49,7 +53,7 @@
     exit;
   }  
  
-  print '<table id="viewtable" class="tablesorter">';
+  print '<table cellspacing="1" id="viewtable" class="tablesorter">';
   print '<thead>';
   print ' <tr>';
   print '  <th>ID</th>';
