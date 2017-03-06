@@ -48,25 +48,25 @@
     exit;
   }  
  
-  print '<table id="viewtable" class="tablesorter">\n';
-  print '<thead>\n';
-  print ' <tr>\n';
-  print '  <th>ID</th>\n';
-  print '  <th>Автор</th>\n';
-  print ' </tr>\n';
-  print '</thead>\n';
-  print '<tbody>\n';
+  print '<table id="viewtable" class="tablesorter">';
+  print '<thead>';
+  print ' <tr>';
+  print '  <th>ID</th>';
+  print '  <th>Автор</th>';
+  print ' </tr>';
+  print '</thead>';
+  print '<tbody>';
   while ($row = $result->fetch_assoc()) 
   {
-    print ' <tr>\n';
+    print ' <tr>';
     foreach ($row as $key => $value)
     {
-      printf("  <td>$value</td>\n");
+      printf("  <td>$value</td>");
     }
-    print ' </tr>\n';
+    print ' </tr>';
   }
-  print '</tbody>\n';
-  print '</table>\n';
+  print '</tbody>';
+  print '</table>';
 
   $result->close();
 
