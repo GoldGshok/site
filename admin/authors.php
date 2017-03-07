@@ -57,6 +57,8 @@
   print ' <tr>';
   print '  <th>ID</th>';
   print '  <th>Автор</th>';
+  print '  <th>Редактировать</th>';
+  print '  <th>Удалить</th>';
   print ' </tr>';
   print '</thead>';
   print '<tbody>';
@@ -68,7 +70,7 @@
       printf("  <td>$value</td>");
     }
     $id = $row['ID'];
-    print "<a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a>";
+    print "<td><a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a>";
     print "<a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a>";
     print ' </tr>';
   }
