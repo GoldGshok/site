@@ -71,7 +71,7 @@
     
     print "<form action='actions/orders_edit.php' method='post'>";
     print "<select name='Client'>";
-    while ($client = $clients->fetch_assoc())
+    while ($row = $clients->fetch_assoc())
     {
       $name = $row['Name'];
       $id = $row['ID'];
@@ -121,7 +121,7 @@
     
     print "<form action='actions/orders_add.php' method='post'>";
     print "<select name='Client'>";
-    while ($client = $clients->fetch_assoc())
+    while ($row = $clients->fetch_assoc())
     {
       $name = $row["Name"];
       $id = $row["ID"];
