@@ -5,7 +5,7 @@
   $db->connect();
   
   $sql = "UPDATE author SET ID = $_POST['ID'], Name = '$_POST['Name']'";
-  $db->getResult($sql);
+  $db->exec($sql);
     
   $db->close();
   

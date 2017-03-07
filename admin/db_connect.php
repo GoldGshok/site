@@ -34,6 +34,15 @@ class DB_CONNECT
     }
     return $result;
   }
+  
+  public function exec($sql)
+  {
+    if (!$result = $this->mysqli->query($sql))
+    {
+      echo "Ошибка: " . $this->mysqli->error . "\n";
+      exit;
+    }
+  }
 
   public function close() 
   {

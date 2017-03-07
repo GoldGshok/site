@@ -45,7 +45,7 @@
   {
     $id = $_GET['delete'];
     $deleteSql = "DELETE FROM author WHERE ID = $id";
-    $db->getResult($deleteSql);
+    $db->exec($deleteSql);
     unset($_GET['delete']); 
   }
  

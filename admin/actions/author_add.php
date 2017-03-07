@@ -7,7 +7,7 @@
   $name = $_POST['Name'];
    
   $sql = "INSERT INTO author (Name) VALUES ('$name')";
-  $db->getResult($sql);
+  $result = $db->exec($sql);
     
   $db->close();
   
