@@ -56,9 +56,13 @@
     $result = $db->getResult($selectSql);
     
     $row = $result->fetch_assoc();
-    $name = $row['Name'];
+    $name = $row["Name"];
     
-    require_once ('forms/author_form.php');
+    print "<form action='author.php' method='post'>";
+    print   "<p>ID: <input type='text' name='ID'/>$id</p>";
+    print   "<p>Автор: <input type='text' name='Name'/>$name</p>";
+    print   "<p><input type='submit'/></p>";
+    print "</form>";
     
     unset($_GET['rewrite']);
   }
