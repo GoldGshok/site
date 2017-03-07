@@ -9,6 +9,6 @@
     
   $db->close();
   
-  header('Location: ../author.php');
+  header('Location: http://paintingbynumbers.azurewebsites.net/admin/author.php');
   exit(); 
 ?>
