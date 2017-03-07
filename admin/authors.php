@@ -67,10 +67,14 @@
     {
       printf("  <td>$value</td>");
     }
+    $id = $row['ID'];
+    print "<td><a href='?rewrite=$id'><img src='../images/edit.png' width='50' height='50'/></a></td>";
+    print "<td><a href='?delete=$id'><img src='../images/delete.png' width='50' height='50'/></a></td>";
     print ' </tr>';
   }
   print '</tbody>';
   print '</table>';
+  
 
   $result->close();
 
