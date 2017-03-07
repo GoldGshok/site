@@ -7,7 +7,7 @@
   $id = $_POST['ID'];
   $name = $_POST['Name'];
   
-  $sql = "UPDATE author SET ID = $id, Name = '$name'";
+  $sql = "UPDATE author SET Name = '$name' WHERE ID = $id";
   $db->exec($sql);
     
   $db->close();
