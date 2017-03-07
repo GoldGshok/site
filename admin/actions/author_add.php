@@ -4,7 +4,7 @@
   $db = new DB_CONNECT();
   $db->connect();
   
-  $sql = "INSERT INTO author (ID, Name) VALUES ($_POST['ID'], '$_POST['Name']')";
+  $sql = "INSERT INTO author (Name) VALUES ('$_POST['Name']')";
   $db->getResult($sql);
     
   $db->close();

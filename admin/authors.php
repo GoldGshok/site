@@ -68,7 +68,6 @@
   if (isset($_GET['add']))
   {
     print "<form action='actions/author_add.php' method='post'>";
-    print   "<p>ID <input type='text' name='ID'/></p>";
     print   "<p>Автор <input type='text' name='Name'/></p>";
     print   "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";  
