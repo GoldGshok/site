@@ -41,6 +41,33 @@
   $db = new DB_CONNECT();
   $db->connect();
 
+  if (isset($_GET['delete']))
+  {
+    $id = $_GET['delete'];
+    $deleteSql = "DELETE FROM author WHERE ID = $id";
+    $db->getResult($deleteSql);
+    unset($_GET['delete']); 
+  }
+ 
+  if (isset($_GET['rewrite']))
+  {
+    $id = $_GET['rewrite'];
+    $selectSql = "SELECT Name FROM author WHERE ID = $id";
+    $result = $db->getResult($selectSql);
+    
+    $row = $result->fetch_assoc();
+    $name = $row['Name'];
+    
+    require_once ('forms/author_form.php');
+    
+    unset($_GET['rewrite']);
+  }
+ 
+  if (isset($_GET['add']))
+  {
+    
+  }
+  
   // выполняем операции с базой данных
   $sql = 'SELECT a.ID, a.Name FROM author a';
 
