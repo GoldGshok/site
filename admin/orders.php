@@ -123,8 +123,8 @@
     print "<select name='Client'>";
     while ($client = $clients->fetch_assoc())
     {
-      $name = $row['Name'];
-      $id = $row['ID'];
+      $name = $row["Name"];
+      $id = $row["ID"];
       print "<option value='$id'>$name</option>";
     }
     print "</select>";
@@ -132,8 +132,8 @@
     print "<select name='Item'>";
     while ($row = $items->fetch_assoc())
     {
-      $name = $row['Name'];
-      $id = $row['ID'];
+      $name = $row["Name"];
+      $id = $row["ID"];
       print "<option value='$id'>$name</option>";
     }
     print "</select>";    
