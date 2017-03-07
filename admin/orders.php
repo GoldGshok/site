@@ -100,18 +100,49 @@
         print "<option value='$id'>$name</option>";
       }
     }
-    print "</select>";    
+    print "</select>";
     
-    print   "<p><input type='submit' value='Изменить'/></p>";
+    print "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
+    
+    $items->close();
+    $clients->close();
   }
  
   if (isset($_GET['add']))
   {
-    print "<form action='actions/author_add.php' method='post'>";
-    print   "<p>Автор <input type='text' name='Name'/></p>";
+    //выборка клиентов
+    $selectClient = "SELECT ID, Name FROM clients";
+    $clients = $db->getResult($selectClient);
+    
+    //выборка товаров
+    $selectItems = "SELECT ID, Name FROM items";
+    $items = $db->getResult($selectItems);  
+    
+    print "<form action='actions/orders_add.php' method='post'>";
+    print "<select name='Client'>";
+    while ($client = $clients->fetch_assoc())
+    {
+      $name = $row['Name'];
+      $id = $row['ID'];
+      print "<option value='$id'>$name</option>";
+    }
+    print "</select>";
+
+    print "<select name='Item'>";
+    while ($row = $items->fetch_assoc())
+    {
+      $name = $row['Name'];
+      $id = $row['ID'];
+      print "<option value='$id'>$name</option>";
+    }
+    print "</select>";    
+    
     print   "<p><input type='submit' value='Добавить'/></p>";
-    print "</form>";  
+    print "</form>";
+    
+    $items->close();
+    $clients->close();  
   }
   
   // выводим все заказы
@@ -137,14 +168,25 @@
       <th>Имя клиента</th>
       <th>Стоимость продажи</th>
       <th>Дата создания</th>
+      <th>Редактировать</th>
+      <th>Удалить</th>
     </tr>
     </thead>
     <tbody>';
   while ($row = $result->fetch_assoc()) 
   {
-    printf("<tr><td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td></tr>", $row["ID"], $row["Item"], $row["Name"], $row["Cost"], $row["Date"]);
+    foreach ($row as $key => $value)
+    {
+      printf("  <td>$value</td>");
+    }
+    $id = $row['ID'];
+    print "<td><a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a></td>";
+    print "<td><a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a></td>";
+    
   }
   print '</tbody></table>';
+  
+  print "<a href='?add'><img src='../images/add.png' width='20' height='20'/></a>";
 
   $result->close();
 
