@@ -58,18 +58,20 @@
     $row = $result->fetch_assoc();
     $name = $row["Name"];
     
-    print "<form action='author.php' method='post'>";
-    print   "<p>ID: <input type='text' name='ID' value='$id'/></p>";
-    print   "<p>Автор: <input type='text' name='Name' value='$name'/></p>";
-    print   "<p><input type='submit'/></p>";
+    print "<form action='actions/author_edit.php' method='post'>";
+    print   "<p>ID <input type='text' name='ID' value='$id'/></p>";
+    print   "<p>Автор <input type='text' name='Name' value='$name'/></p>";
+    print   "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
-    
-    unset($_GET['rewrite']);
   }
  
   if (isset($_GET['add']))
   {
-    
+    print "<form action='actions/author_add.php' method='post'>";
+    print   "<p>ID <input type='text' name='ID'/></p>";
+    print   "<p>Автор <input type='text' name='Name'/></p>";
+    print   "<p><input type='submit' value='Добавить'/></p>";
+    print "</form>";  
   }
   
   // выполняем операции с базой данных
