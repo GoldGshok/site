@@ -47,6 +47,7 @@
     $id = $_GET['delete'];
     $deleteSql = "DELETE FROM orders WHERE ID = $id";
     $db->exec($deleteSql);
+    $db->close();
     header('Location: http://paintingbynumbers.azurewebsites.net/admin/orders.php');
     exit(); 
   }
@@ -61,6 +62,8 @@
     $client = $row["ID_client"];
     $item = $row["ID_item"];
     
+    $result->close();
+    
     //выборка клиентов
     $selectClient = "SELECT ID, Name FROM clients";
     $clients = $db->getResult($selectClient);
@@ -70,12 +73,14 @@
     $items = $db->getResult($selectItems);  
     
     print "<form action='actions/orders_edit.php' method='post'>";
+    
+    //combobox по клиентам
     print "<select name='Client'>";
     while ($row = $clients->fetch_assoc())
     {
       $name = $row["Name"];
       $client_id = $row["ID"];
-      if ($client_id == $id)
+      if ($client_id == $client)
       {
         print "<option selected value='$client_id'>$name</option>";
       }
@@ -86,14 +91,15 @@
     }
     print "</select>";
 
+    //combobox по товарам
     print "<select name='Item'>";
     while ($row = $items->fetch_assoc())
     {
       $name = $row["Name"];
       $item_id = $row["ID"];
-      if ($item_id == $id)
+      if ($item_id == $item)
       {
-        print "<option value='$item_id' selected>$name</option>";
+        print "<option selected value='$item_id'>$name</option>";
       }
       else
       {
@@ -120,25 +126,28 @@
     $items = $db->getResult($selectItems);  
     
     print "<form action='actions/orders_add.php' method='post'>";
+    
+    //combobox по клиентам
     print "<select name='Client'>";
     while ($row = $clients->fetch_assoc())
     {
       $name = $row["Name"];
-      $id = $row["ID"];
-      print "<option value='$id'>$name</option>";
+      $client_id = $row["ID"];
+      print "<option value='$client_id'>$name</option>";
     }
     print "</select>";
 
+    //combobox по товарам
     print "<select name='Item'>";
     while ($row = $items->fetch_assoc())
     {
       $name = $row["Name"];
-      $id = $row["ID"];
-      print "<option value='$id'>$name</option>";
+      $item_id = $row["ID"];
+      print "<option value='$item_id'>$name</option>";
     }
     print "</select>";    
     
-    print   "<p><input type='submit' value='Добавить'/></p>";
+    print "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";
     
     $items->close();
