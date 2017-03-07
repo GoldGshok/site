@@ -59,8 +59,8 @@
     $name = $row["Name"];
     
     print "<form action='author.php' method='post'>";
-    print   "<p>ID: <input type='text' name='ID'/>$id</p>";
-    print   "<p>Автор: <input type='text' name='Name'/>$name</p>";
+    print   "<p>ID: <input type='text' name='ID' value='$id'/></p>";
+    print   "<p>Автор: <input type='text' name='Name' value='$name'/></p>";
     print   "<p><input type='submit'/></p>";
     print "</form>";
     
