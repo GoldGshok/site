@@ -4,7 +4,10 @@
   $db = new DB_CONNECT();
   $db->connect();
   
-  $sql = "UPDATE author SET ID = $_POST['ID'], Name = '$_POST['Name']'";
+  $id = $_POST['ID'];
+  $name = $_POST['Name'];
+  
+  $sql = "UPDATE author SET ID = $id, Name = '$name']'";
   $db->exec($sql);
     
   $db->close();
