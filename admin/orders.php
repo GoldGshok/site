@@ -73,15 +73,15 @@
     print "<select name='Client'>";
     while ($row = $clients->fetch_assoc())
     {
-      $name = $row['Name'];
-      $id = $row['ID'];
-      if ($client == $id)
+      $name = $row["Name"];
+      $client_id = $row["ID"];
+      if ($client_id == $id)
       {
-        print "<option value='$id' selected>$name</option>";
+        print "<option selected value='$client_id'>$name</option>";
       }
       else
       {
-        print "<option value='$id'>$name</option>";
+        print "<option value='$client_id'>$name</option>";
       }
     }
     print "</select>";
@@ -89,21 +89,24 @@
     print "<select name='Item'>";
     while ($row = $items->fetch_assoc())
     {
-      $name = $row['Name'];
-      $id = $row['ID'];
-      if ($item == $id)
+      $name = $row["Name"];
+      $item_id = $row["ID"];
+      if ($item_id == $id)
       {
-        print "<option value='$id' selected>$name</option>";
+        print "<option value='$item_id' selected>$name</option>";
       }
       else
       {
-        print "<option value='$id'>$name</option>";
+        print "<option value='$item_id'>$name</option>";
       }
     }
     print "</select>";
     
     print "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
+    
+    $items->close();
+    $clients->close();
   }
  
   if (isset($_GET['add']))
@@ -137,7 +140,9 @@
     
     print   "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";
- 
+    
+    $items->close();
+    $clients->close();  
   }
   
   // выводим все заказы
