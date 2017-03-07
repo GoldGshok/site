@@ -59,7 +59,7 @@
     $name = $row["Name"];
     
     print "<form action='actions/author_edit.php' method='post'>";
-    print   "<p>ID <input type='text' name='ID' value='$id' disabled/></p>";
+    print   "<p>ID <input type='text' name='ID' value='$id'/></p>";
     print   "<p>Автор <input type='text' name='Name' value='$name'/></p>";
     print   "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
