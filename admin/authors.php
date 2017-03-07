@@ -46,7 +46,8 @@
     $id = $_GET['delete'];
     $deleteSql = "DELETE FROM author WHERE ID = $id";
     $db->exec($deleteSql);
-    unset($_GET['delete']); 
+    header('Location: http://paintingbynumbers.azurewebsites.net/admin/authors.php');
+    exit();
   }
  
   if (isset($_GET['rewrite']))

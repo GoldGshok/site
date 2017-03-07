@@ -5,7 +5,6 @@
   $db->connect();
   
   $id = $_POST['ID'];
-  echo "$id";
   $name = $_POST['Name'];
   
   $sql = "UPDATE author SET Name = '$name' WHERE ID = $id";

@@ -41,7 +41,80 @@
   $db = new DB_CONNECT();
   $db->connect();
 
-  // выполняем операции с базой данных
+  // проверям get запросы
+  if (isset($_GET['delete']))
+  {
+    $id = $_GET['delete'];
+    $deleteSql = "DELETE FROM orders WHERE ID = $id";
+    $db->exec($deleteSql);
+    header('Location: http://paintingbynumbers.azurewebsites.net/admin/orders.php');
+    exit(); 
+  }
+ 
+  if (isset($_GET['rewrite']))
+  {
+    $id = $_GET['rewrite'];
+    $selectSql = "SELECT o.ID_client, o.ID_item FROM orders o WHERE o.ID = $id";
+    $result = $db->getResult($selectSql);
+    
+    $row = $result->fetch_assoc();
+    $client = $row["ID_client"];
+    $item = $row["ID_item"];
+    
+    //выборка клиентов
+    $selectClient = "SELECT ID, Name FROM clients";
+    $clients = $db->getResult($selectClient);
+    
+    //выборка товаров
+    $selectItems = "SELECT ID, Name FROM items";
+    $items = $db->getResult($selectItems);  
+    
+    print "<form action='actions/orders_edit.php' method='post'>";
+    print "<select name='Client'>";
+    while ($client = $clients->fetch_assoc())
+    {
+      $name = $row['Name'];
+      $id = $row['ID'];
+      if ($client == $id)
+      {
+        print "<option value='$id' selected>$name</option>";
+      }
+      else
+      {
+        print "<option value='$id'>$name</option>";
+      }
+    }
+    print "</select>";
+
+    print "<select name='Item'>";
+    while ($row = $items->fetch_assoc())
+    {
+      $name = $row['Name'];
+      $id = $row['ID'];
+      if ($item == $id)
+      {
+        print "<option value='$id' selected>$name</option>";
+      }
+      else
+      {
+        print "<option value='$id'>$name</option>";
+      }
+    }
+    print "</select>";    
+    
+    print   "<p><input type='submit' value='Изменить'/></p>";
+    print "</form>";
+  }
+ 
+  if (isset($_GET['add']))
+  {
+    print "<form action='actions/author_add.php' method='post'>";
+    print   "<p>Автор <input type='text' name='Name'/></p>";
+    print   "<p><input type='submit' value='Добавить'/></p>";
+    print "</form>";  
+  }
+  
+  // выводим все заказы
   $sql = 'SELECT o.ID, i.Name AS Item, cl.Name, p.Cost, o.Date  FROM orders o
     INNER JOIN clients cl ON cl.ID = o.ID_client
     INNER JOIN items i ON i.ID = o.ID_item
