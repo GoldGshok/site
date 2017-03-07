@@ -75,7 +75,7 @@
     print "<form action='actions/orders_edit.php' method='post'>";
     
     //combobox по клиентам
-    print "<select name='Client'>";
+    print "<p>Клиент <select name='Client'>";
     while ($row = $clients->fetch_assoc())
     {
       $name = $row["Name"];
@@ -89,10 +89,10 @@
         print "<option value='$client_id'>$name</option>";
       }
     }
-    print "</select>";
+    print "</select> </p>";
 
     //combobox по товарам
-    print "<select name='Item'>";
+    print "<p>Товар <select name='Item'>";
     while ($row = $items->fetch_assoc())
     {
       $name = $row["Name"];
@@ -106,7 +106,7 @@
         print "<option value='$item_id'>$name</option>";
       }
     }
-    print "</select>";
+    print "</select> </p>";
     
     print "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
@@ -128,24 +128,24 @@
     print "<form action='actions/orders_add.php' method='post'>";
     
     //combobox по клиентам
-    print "<select name='Client'>";
+    print "<p>Клиент <select name='Client'>";
     while ($row = $clients->fetch_assoc())
     {
       $name = $row["Name"];
       $client_id = $row["ID"];
       print "<option value='$client_id'>$name</option>";
     }
-    print "</select>";
+    print "</select></p>";
 
     //combobox по товарам
-    print "<select name='Item'>";
+    print "<p>Товар <select name='Item'>";
     while ($row = $items->fetch_assoc())
     {
       $name = $row["Name"];
       $item_id = $row["ID"];
       print "<option value='$item_id'>$name</option>";
     }
-    print "</select>";    
+    print "</select></p>";    
     
     print "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";
