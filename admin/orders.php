@@ -104,9 +104,6 @@
     
     print "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
-    
-    $items->close();
-    $clients->close();
   }
  
   if (isset($_GET['add']))
@@ -140,9 +137,7 @@
     
     print   "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";
-    
-    $items->close();
-    $clients->close();  
+ 
   }
   
   // выводим все заказы
