@@ -110,9 +110,9 @@
     {
       printf("<td>$value</td>");
     }
-    printf("</tr>");
     print "<td><a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a></td>";
     print "<td><a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a></td>";
+    print "</tr>";
   }
   print '</tbody></table>';
   print "<a href='?add'><img src='../images/add.png' width='20' height='20'/></a>";

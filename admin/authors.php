@@ -105,7 +105,7 @@
     $id = $row['ID'];
     print "<td><a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a></td>";
     print "<td><a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a></td>";
-    print ' </tr>';
+    print '</tr>';
   }
   print '</tbody>';
   print '</table>';
