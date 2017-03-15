@@ -82,6 +82,7 @@
   if ($result->num_rows == 0) 
   {
     echo "Извините, данные не найдены.";
+    print "<a href='?add'><img src='../images/add.png' width='20' height='20'/></a>";
     exit;
   }  
  

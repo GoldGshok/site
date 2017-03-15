@@ -196,7 +196,7 @@
     print "<p>Описание <input type='textarea' name='Note' value='$note'/></p>";
     print "<p>Ссылка картинки <input type='text' name='Site' value='$site'/></p>";
     print "<p>Сложность <input type='text' name='Complexity' value='$complexity'/></p>";
-        
+
     print "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
     
@@ -322,6 +322,7 @@
   if ($result->num_rows == 0) 
   {
     echo "Извините, данные не найдены.";
+    print "<a href='?add'><img src='../images/add.png' width='20' height='20'/></a>";
     exit;
   }  
  
