@@ -16,7 +16,7 @@
   $size = $_POST['Size'];
    
   $sql = 
-    "INSERT INTO orders (
+    "INSERT INTO items (
       Name, 
       ID_item_size, 
       ID_item_type, 
@@ -32,6 +32,6 @@
     
   $db->close();
   
-  header('Location: http://paintingbynumbers.azurewebsites.net/admin/orders.php');
+  header('Location: http://paintingbynumbers.azurewebsites.net/admin/catalog.php');
   exit();  
 ?>

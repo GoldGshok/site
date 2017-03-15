@@ -290,7 +290,7 @@
     print "<p>Ссылка картинки <input type='text' name='Site' size='60'/></p>";
     print "<p>Сложность <input type='text' name='Complexity'/></p>";
     
-    print "<p><input type='submit' value='Изменить'/></p>";
+    print "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";
        
     $Authors->close();
