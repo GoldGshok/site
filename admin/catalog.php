@@ -89,7 +89,7 @@
     $itemSizes = $db->getResult($selectItemSize);
     
     //выборка типов картин
-    $selectItemType = "SELECT ID, Name FROM items_type";
+    $selectItemType = "SELECT ID, Name FROM item_type";
     $itemTypes = $db->getResult($selectItemType);
 
     //выборка цен продажи
