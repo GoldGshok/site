@@ -107,6 +107,8 @@
     
     print "<form action='actions/catalog_edit.php' method='post'>";
     
+    print "<p>ID <input type='text' name='ID' value='$id'/></p>";
+    
     //combobox по размерам
     print "<p>Размер <select name='Size'>";
     while ($row = $itemSizes->fetch_assoc())
