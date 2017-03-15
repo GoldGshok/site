@@ -67,7 +67,8 @@
         i.Complexity, 
         i.ID_author, 
         i.Note 
-      FROM items i WHERE i.ID = $id";
+      FROM items i 
+      WHERE i.ID = $id";
     $result = $db->getResult($selectSql);
     
     $row = $result->fetch_assoc();
