@@ -194,7 +194,7 @@
     
     print "<p>Наименование <input type='text' name='Name' value='$itemName'/></p>";
     print "<p>Артикул <input type='text' name='VendorCode' value='$vendor_code'/></p>";
-    print "<p>Описание <textarea type='text' name='Note' value='$note'/></textarea></p>";
+    print "<p>Описание <textarea type='text' name='Note'/>$note</textarea></p>";
     print "<p>Ссылка картинки <input type='text' name='Site' value='$site' size='60'/></p>";
     print "<p>Сложность <input type='text' name='Complexity' value='$complexity'/></p>";
 
