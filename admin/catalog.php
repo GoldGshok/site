@@ -360,8 +360,8 @@
       <td>%s</td>
       <td>%s</td>
       <td>%s</td>
-      <td><a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a></td>
-      <td><a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a></td>
+      <td>%s</td>
+      <td>%s</td>
       </tr>", 
       $row["ID"], 
       $row["Article"], 
@@ -372,7 +372,9 @@
       $row["Type"], 
       $row["Complexity"],
       $row["Buy_Cost"],
-      $row["Sell_Cost"]);
+      $row["Sell_Cost"],
+      "<a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a>",
+      "<a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a>");
   }
   print '</tbody></table>';
   print "<a href='?add'><img src='../images/add.png' width='20' height='20'/></a>";
