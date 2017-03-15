@@ -71,7 +71,7 @@
     $result = $db->getResult($selectSql);
     
     $row = $result->fetch_assoc();
-    $name = $row["Name"];
+    $itemName = $row["Name"];
     $site = $row["Site"];
     $vendor_code = $row["Vendor_code"];
     $complexity = $row["Complexity"];
@@ -191,7 +191,7 @@
     }
     print "</select> </p>";
     
-    print "<p>Наименование <input type='text' name='Name' value='$name'/></p>";
+    print "<p>Наименование <input type='text' name='Name' value='$itemName'/></p>";
     print "<p>Артикул <input type='text' name='VendorCode' value='$vendor_code'/></p>";
     print "<p>Описание <input type='textarea' name='Note' value='$note'/></p>";
     print "<p>Ссылка картинки <input type='text' name='Site' value='$site'/></p>";
