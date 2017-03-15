@@ -348,6 +348,7 @@
       <tbody>';
   while ($row = $result->fetch_assoc()) 
   {
+    $id = $row['ID'];
     printf("<tr>
       <td>%s</td> 
       <td>%s</td>
