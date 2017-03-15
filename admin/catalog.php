@@ -229,7 +229,7 @@
     $selectAuthors = "SELECT ID, Name FROM author";
     $Authors = $db->getResult($selectAuthors);
     
-    print "<form action='actions/catalog_edit.php' method='post'>";
+    print "<form action='actions/catalog_add.php' method='post'>";
     
     //combobox по размерам
     print "<p>Размер <select name='Size'>";
@@ -339,6 +339,8 @@
         <th>Сложность</th>
         <th>Стоимость покупки (руб.)</th>
         <th>Стоимость продажи (руб.)</th>
+        <th>Редактировать</th>
+        <th>Удалить</th>
        </tr>
       </thead>
       <tbody>';
@@ -366,8 +368,11 @@
       $row["Complexity"],
       $row["Buy_Cost"],
       $row["Sell_Cost"]);
+    print "<td><a href='?rewrite=$id'><img src='../images/edit.png' width='20' height='20'/></a></td>";
+    print "<td><a href='?delete=$id'><img src='../images/delete.png' width='20' height='20'/></a></td>";
   }
   print '</tbody></table>';
+  print "<a href='?add'><img src='../images/add.png' width='20' height='20'/></a>";
 
   $result->close();
 

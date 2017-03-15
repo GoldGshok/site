@@ -39,6 +39,45 @@
 
   $db = new DB_CONNECT();
   $db->connect();
+  
+  if (isset($_GET['delete']))
+  {
+    $id = $_GET['delete'];
+    $deleteSql = "DELETE FROM clients WHERE ID = $id";
+    $db->exec($deleteSql);
+    header('Location: http://paintingbynumbers.azurewebsites.net/admin/clients.php');
+    exit();
+  }
+ 
+  if (isset($_GET['rewrite']))
+  {
+    $id = $_GET['rewrite'];
+    $selectSql = "SELECT ID, Name, Site, Phone FROM clients WHERE ID = $id";
+    $result = $db->getResult($selectSql);
+    
+    $row = $result->fetch_assoc();
+    $name = $row["Name"];
+    $site = $row["Site"];
+    $phone = $row["Phone"];
+    
+    print "<form action='actions/clients_edit.php' method='post'>";
+    print   "<p>ID <input type='text' name='ID' value='$id'/></p>";
+    print   "<p>ФИО клиента <input type='text' name='Name' value='$name'/></p>";
+    print   "<p>Ссылка на страницу <input type='text' name='Site' value='$site'/></p>";
+    print   "<p>Телефон <input type='text' name='Phone' value='$phone'/></p>";
+    print   "<p><input type='submit' value='Изменить'/></p>";
+    print "</form>";
+  }
+ 
+  if (isset($_GET['add']))
+  {
+    print "<form action='actions/clients_add.php' method='post'>";
+    print   "<p>ФИО клиента <input type='text' name='Name'/></p>";
+    print   "<p>Ссылка на страницу <input type='text' name='Site'/></p>";
+    print   "<p>Телефон <input type='text' name='Phone'/></p>";
+    print   "<p><input type='submit' value='Добавить'/></p>";
+    print "</form>";  
+  }
 
   // выполняем операции с базой данных
   $sql = 'SELECT cl.ID, cl.Name, cl.Site, cl.Phone FROM clients cl';
