@@ -63,7 +63,7 @@
     print "<form action='actions/clients_edit.php' method='post'>";
     print   "<p>ID <input type='text' name='ID' value='$id'/></p>";
     print   "<p>ФИО клиента <input type='text' name='Name' value='$name'/></p>";
-    print   "<p>Ссылка на страницу <input type='text' name='Site' value='$site'/></p>";
+    print   "<p>Ссылка на страницу <input type='text' name='Site' value='$site' size='60'/></p>";
     print   "<p>Телефон <input type='text' name='Phone' value='$phone'/></p>";
     print   "<p><input type='submit' value='Изменить'/></p>";
     print "</form>";
@@ -73,7 +73,7 @@
   {
     print "<form action='actions/clients_add.php' method='post'>";
     print   "<p>ФИО клиента <input type='text' name='Name'/></p>";
-    print   "<p>Ссылка на страницу <input type='text' name='Site'/></p>";
+    print   "<p>Ссылка на страницу <input type='text' name='Site' size='60'/></p>";
     print   "<p>Телефон <input type='text' name='Phone'/></p>";
     print   "<p><input type='submit' value='Добавить'/></p>";
     print "</form>";  

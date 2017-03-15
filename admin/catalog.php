@@ -194,8 +194,8 @@
     
     print "<p>Наименование <input type='text' name='Name' value='$itemName'/></p>";
     print "<p>Артикул <input type='text' name='VendorCode' value='$vendor_code'/></p>";
-    print "<p>Описание <input type='textarea' name='Note' value='$note'/></p>";
-    print "<p>Ссылка картинки <input type='text' name='Site' value='$site'/></p>";
+    print "<p>Описание <textarea type='text' name='Note' value='$note'/></p>";
+    print "<p>Ссылка картинки <input type='text' name='Site' value='$site' size='60'/></p>";
     print "<p>Сложность <input type='text' name='Complexity' value='$complexity'/></p>";
 
     print "<p><input type='submit' value='Изменить'/></p>";
@@ -284,8 +284,8 @@
     
     print "<p>Наименование <input type='text' name='Name'/></p>";
     print "<p>Артикул <input type='text' name='VendorCode'/></p>";
-    print "<p>Описание <input type='textarea' name='Note'/></p>";
-    print "<p>Ссылка картинки <input type='text' name='Site'/></p>";
+    print "<p>Описание <textarea type='text' name='Note'/></p>";
+    print "<p>Ссылка картинки <input type='text' name='Site' size='60'/></p>";
     print "<p>Сложность <input type='text' name='Complexity'/></p>";
     
     print "<p><input type='submit' value='Изменить'/></p>";
