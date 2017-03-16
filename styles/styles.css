@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Pangolin');
 
 body {
-  background-color: #E1E3DD;
   background-image: url(../images/background_admin.jpg) 100% 100% no-repeat;
+  background-color: #E1E3DD;
 }
 
 nav {
