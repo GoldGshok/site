@@ -5,7 +5,8 @@
     <link href="../styles/styles.css" rel="stylesheet">
     <style type="text/css">
       body {
-        background: url("../images/background_admin.jpg") 100% no-repeat; 
+        background: url("../images/background_admin.jpg") no-repeat;
+        background-size: 100%; 
       }
     </style>
     
