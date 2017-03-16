@@ -3,7 +3,7 @@
     <title>Вход в админку</title>
     <link href="../styles/form_style.css" rel="stylesheet">
     <link href="../styles/styles.css" rel="stylesheet">
-    <style>
+    <style type="text/css">
       background: url("../images/background_admin.jpg") no-repeat;
       background-size: 100%;  
     </style>
