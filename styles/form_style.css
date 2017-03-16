@@ -9,6 +9,7 @@ form {
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
   width: 240px;
+  background-color: #E1E3DD;
 }
 fieldset {
   border: 0;
